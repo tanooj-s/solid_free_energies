@@ -9,7 +9,7 @@ s = int(args.s) # supercell size
 lambdas = np.arange(0.00,1.01,0.05)
 
 # note that a separate LAMMPS input file is needed because fix spring/self errors out when you pass in a spring constant of 0
-# or alternatively one could edit fix_spring_self.cpp to not error out and recompile LAMMPS
+# or alternatively one could comment out line 50 of fix_spring_self.cpp for it to not error out and recompile LAMMPS
 with open("spring_constants.csv","r") as f:
     lines = f.readlines()
     for line in lines[1:]:
