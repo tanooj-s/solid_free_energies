@@ -1,0 +1,41 @@
+log T-$T_lam-0.0_spring.log
+units metal 
+atom_style charge
+boundary p p p
+
+# cation lattice
+lattice fcc ${lc}
+region box block 0 $s 0 $s 0 $s
+create_box 2 box
+create_atoms 1 box
+
+# anion lattice
+lattice fcc ${lc} origin 0.5 0.0 0.0
+create_atoms 2 box
+
+group Na type 1 
+group Cl type 2
+mass 1 22.9898
+mass 2 35.4527
+set group Na charge +1
+set group Cl charge -1
+
+pair_style born/coul/long 9.0
+pair_coeff 1 1 0.2637 0.317 2.340 1.048553 -0.49935 # Na-Na
+pair_coeff 1 2 0.21096 0.317 2.755 6.99055303 -8.6757 # Cl Na
+pair_coeff 2 2 0.158221 0.327 3.170 75.0544 -150.7325 # Cl-Cl
+pair_modify tail yes
+kspace_style ewald 1e-5
+
+fix 1 all nvt temp ${T}. ${T}. $(40*dt)
+
+timestep 0.001
+velocity all create ${T} ${seed}
+
+thermo 100
+thermo_style custom step atoms pe ke ecoul evdwl etail elong temp press enthalpy vol
+thermo_modify norm no
+dump 0 all custom 250 T-$T_lam-0.0_spring.dump id type x y z
+
+run 100000
+

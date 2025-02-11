@@ -1,0 +1,3 @@
+#!/bin/bash
+#SBATCH -n 8 -N 1 -t 48:00:00 --hint=nomultithread -o %j.LOG --exclude=cpu10[11-12]
+mpirun /home/tanooj/lammps-24Jun2024/build/lmp -i spring.in -v T $1 -v lc $2 -v K_na $3 -v K_cl $4 -v l $5 -v s $6 -v seed $RANDOM
