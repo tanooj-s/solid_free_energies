@@ -12,6 +12,5 @@ Things to note:
 
 - this entire workflow (except step 5) should be run at multiple system sizes (at least 4 points for an observable trend)
 - each system size should be run in a different folder, so for example I would mkdir N512 mkdir N1000 mkdir N2744 mkdir N5832, and then copy the relevant scripts in this directory (except extrapolate_large_N.py) to each of those subdirectories
-- there is a pdf included in this directory that contains somewhat of a rederivation of the analytical free energy of the finite sized harmonic crystal, in a form that seems more easily interpretable to me than the expression typically used in the literature
-- this pdf also includes a couple of figures with results for this pathway as applied to Fumi-Tosi NaCl
+- (update: this pdf needs to be updated) there is a pdf included in this directory that contains somewhat of a rederivation of the analytical free energy of the finite sized harmonic crystal, in a form that seems more easily interpretable to me than the expression typically used in the literature
 - I have also included multiple other relevant background papers from the literature in the ref/ directory for the interested reader 
