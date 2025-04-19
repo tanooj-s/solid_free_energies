@@ -10,7 +10,6 @@
 # and then there's an additional "large" driving force on top of that which is the change in the internal energy of the crystal when particles are at exact lattice sites
 # at λ=0 this is the potential energy for particles frozen at lattice sites, what I call the "static crystal potential energy"
 # at λ=1 there is no internal energy for particles at exact lattice sites
-# (or really that λ=1 term would be infinite as per K(x-x0)^2, since springs would be "maximally compressed" in that case, but that is another rabbit hole irrelevant for this application)
 
 # results validated against https://doi.org/10.1063/1.1522375
 # target number: Gsol = -97.75 ± 0.02 kBT per ion pair at 1074K, N=512
